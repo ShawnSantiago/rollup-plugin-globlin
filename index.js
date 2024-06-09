@@ -34,7 +34,7 @@ const transformer = (dest, transform) => async (base, file) => {
 
   if (typeof transform === 'function') {
 
-    log(chalk`{dim - Transformed:) {cyan ${file}}`)
+    log(chalk`{dim - Transformed:} {cyan ${file}}`)
 
     return transform({ name: file, content, dest })
   }
@@ -52,7 +52,7 @@ const transformer = (dest, transform) => async (base, file) => {
 
     if (typeof transform[item] === 'string') return transform[item]
     if (typeof transform[item] === 'function') {
-      log(chalk`{dim - Transformed:) {cyan ${file}}`)
+      log(chalk`{dim - Transformed:} {cyan ${file}}`)
       return transform[item]({ content, dest, name: file })
     }
 
